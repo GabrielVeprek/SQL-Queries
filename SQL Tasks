@@ -68,8 +68,17 @@ having count(od.product_id) > 19
 Task 8:
 List all orders that were placed on a Monday and shipped on a Friday.
 
+select distinct order_id , o.order_date , o.shipped_date
+from orders o
+where
+EXTRACT(DOW FROM o.order_date) = 1
+AND EXTRACT(DOW FROM o.shipped_date) = 5
+
+
 Task 9:
 List all orders that have been shipped to the 'Canada'.
+
+
 
 Task 10:
 List all suppliers who are located in the 'USA' and have a fax number that ends with '33'.
