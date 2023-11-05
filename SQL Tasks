@@ -86,6 +86,11 @@ where o.ship_country = 'Canada'
 Task 10:
 List all suppliers who are located in the 'USA' and have a fax number that ends with '33'.
 
+select distinct *
+from suppliers s
+where s.country = 'USA' and s.fax like '%33'
+
+
 Task 11:
 List all orders that have a shipped date later than the required date and have a freight charge greater than $10.
 
