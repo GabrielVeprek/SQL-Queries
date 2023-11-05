@@ -41,8 +41,18 @@ having count(od.product_id) > 5
 Task 5:
 List all suppliers who are located in Canada.
 
+select *
+from suppliers s
+where s.city = 'Canada'
+
+
 Task 6:
 List all employees who have the title 'Sales Representative' and were born in Norway.
+
+select *
+from employees e
+where e.title = 'Sales Representative' and e.city = 'Norway'
+
 
 Task 7:
 List all products that have a unit price greater than $20 and have been ordered at least 20 times.
