@@ -78,6 +78,9 @@ AND EXTRACT(DOW FROM o.shipped_date) = 5
 Task 9:
 List all orders that have been shipped to the 'Canada'.
 
+select distinct *
+from orders o
+where o.ship_country = 'Canada'
 
 
 Task 10:
