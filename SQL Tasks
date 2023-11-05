@@ -57,6 +57,14 @@ where e.title = 'Sales Representative' and e.city = 'Norway'
 Task 7:
 List all products that have a unit price greater than $20 and have been ordered at least 20 times.
 
+select p.product_id,p.product_name ,count(od.product_id)  as order_counter
+from products p
+join order_details od on od.product_id = p.product_id
+where p.unit_price > 20
+group by p.product_id
+having count(od.product_id) > 19
+
+
 Task 8:
 List all orders that were placed on a Monday and shipped on a Friday.
 
