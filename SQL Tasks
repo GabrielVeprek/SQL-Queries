@@ -19,6 +19,11 @@ where c.fax like '09%' and c2.category_name = 'Beverages'
 Task 3:
 List all products that have been ordered at least once and have a reorder level of less than or equals 5.
 
+select distinct p.product_id ,p.reorder_level
+from products p
+join order_details od on od.product_id = p.product_id
+where p.reorder_level < 6
+
 Task 4:
 List all products that have been ordered more than 5 times and have a unit price greater than $10.
 
