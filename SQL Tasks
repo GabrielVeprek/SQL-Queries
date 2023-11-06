@@ -94,14 +94,35 @@ where s.country = 'USA' and s.fax like '%33'
 Task 11:
 List all orders that have a shipped date later than the required date and have a freight charge greater than $10.
 
+select distinct *
+from orders o
+where o.shipped_date > o.required_date and o.freight > 10
+
+
 Task 12:
 List all orders that have a total price less than $500 and a discount greater than 20%.
+
+select distinct o.order_id, sum(od.unit_price * od.quantity *(1- od.discount)) as total_sum
+from orders o
+join order_details od on od.order_id = o.order_id
+group by o.order_id
+having sum(od.unit_price * od.quantity *(1- od.discount)) < 500
+
 
 Task 13:
 List all customers who have a postal code that starts with 'M'.
 
+select *
+from customers c
+where c.postal_code like 'M%'
+
+
 Task 14:
 List all employees who have the title 'Vice President, Sales'.
+
+select *
+from employees e
+where e.title = 'Vice President, Sales'
 
 Task 15:
 List all employees who have at least one order with a total price less than $5000 but greater than $1000.
